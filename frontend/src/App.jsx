@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import CreatePage from "./pages/CreatePage";
 import HomePage from "./pages/HomePage";
 import Navbar from "./componentss/Navbar";
-import HeroSection from "./componentss/HeroSection";
 
 function App() {
 
