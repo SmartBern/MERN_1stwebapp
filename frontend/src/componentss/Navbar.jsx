@@ -18,26 +18,24 @@ const Navbar = () => {
     <Container maxW={"1140px"}  position='fixed' top={0}
     left={0} right={0} zIndex={1} bg={bg} 
     > 
-
+        {/* -------- Desktop Nav -------- */}
         <Flex
             as='nav'
             align='center'
             justify='space-between'
             wrap='wrap'
             padding='0.7rem'
-            
+            display={{ base: 'none', md: 'flex'}}
         >
-            
-
-        <Text
+            <Text
             bgGradient={"linear(to-l, #7928CA, #FF0080)"}
             bgClip={"text"}
-            fontSize={{ base: "20", sm: "26"}}
+            fontSize={{ md: "22", lg: "23"}}
             fontWeight={"bold"}
             textTransform={"uppercase"}
             textAlign={"center"}
             >
-            <Link to={"/"} style={{display: "flex", alignItems: "center", gap: "8px", color: ""}}> Phone Store <FaShoppingCart fontSize="30" color='#7928CA' /> </Link> 
+            <Link to={"/"} style={{display: "flex", alignItems: "center", gap: "8px", color: ""}}> Phone Store <FaShoppingCart fontSize="26" color='#7928CA' /> </Link> 
         </Text>
 
         <Box display={{ base: 'block', md: 'none'}}>
@@ -51,50 +49,94 @@ const Navbar = () => {
         </Box>
 
         <HStack display={{ base: 'none', md: 'flex'}} >
-            <Button variant='ghost'>About</Button>
-            <Button variant='ghost'>Portfolio</Button>
-            <Button variant='ghost'>Contact</Button>
+            <Button variant='ghost'>New Phones</Button>
+            <Button variant='ghost'>Used Phones</Button>
 
             <Link to={"/create"}>
                 <Button>
-                    <CiSquarePlus fontSize={20} />
+                    Add Phone<CiSquarePlus fontSize={22} />
                 </Button>
             </Link>
 
             <Button onClick={toggleColorMode}> {colorMode === "light" ? <IoMoon /> :
-                <LuSun size={20} /> }
+                <LuSun size={22} /> }
             </Button>
         </HStack>
 
         </Flex>
 
 
-        {isOpen && (
-            <Box
-            pb={4} display={{ md: 'none' }} bg={bg} spacing={2} 
+        {/* -------- Mobile Nav -------- */}
+        <Box display={{ md: 'none'}}>
+            <Flex as='nav'
+            justify='space-between'
+            alignItems={'center'} 
             >
-                <HStack as='nav' spacing={4} p={4}>
-                <Link to={"/create"}>
-                    <Button>
-                        <CiSquarePlus fontSize={20} />
+                <Text
+                bgGradient={"linear(to-l, #7928CA, #FF0080)"}
+                bgClip={"text"}
+                fontSize={'16px'}
+                fontWeight={"bold"}
+                textTransform={"uppercase"}
+                textAlign={"center"}
+                >
+                    <Link to={"/"} style={{display: "flex", alignItems: "center", gap: "8px", color: ""}}> Phone Store <FaShoppingCart fontSize="18" color='#7928CA' /> </Link> 
+                </Text>
+
+                <HStack as='nav' spacing={4} p={2}>
+                    <Link to={"/create"}>
+                        <Button>
+                            <CiSquarePlus fontSize={22} />
+                        </Button>
+                    </Link>
+
+                    <Button onClick={toggleColorMode}> {colorMode === "light" ? <IoMoon /> :
+                        <LuSun size={18} /> }
                     </Button>
-                </Link>
-
-                <Button onClick={toggleColorMode}> {colorMode === "light" ? <IoMoon /> :
-                    <LuSun size={20} /> }
-                </Button>
                 </HStack>
-                
 
+                <Box display={{ base: 'block', md: 'none'}}>
+                    <IconButton 
+                    onClick={onToggle} 
+                    icon={isOpen ? <CloseIcon w={4} h={5} /> : <HamburgerIcon w={6} h={6} /> } 
+                    variant={'ghost'}
+                    aria-label='Toggle Navigation' 
+                    />
+                </Box>
+            </Flex>
+            
+
+            {isOpen && (
+            <Box
+            p={0} 
+            display={{ md: 'none' }} 
+            bg={'purple.600'} 
+            spacing={2}
+            h="60vh" 
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
                 <Stack as='nav' spacing={4} p={4}>
-                    <Button variant='ghost'>About</Button>
-                    <Button variant='ghost'>Portfolio</Button>
-                    <Button variant='ghost'>Contact</Button>
+                    <Button variant='ghost'>
+                        <Text color={'white'}>
+                            New Phones
+                        </Text>
+                    </Button>
+                    <Button variant='ghost'>
+                        <Text color={'white'}>
+                            Used Phones
+                        </Text>
+                    </Button>
+                    <Button variant='ghost'>
+                        <Text color={'white'}>
+                            Contact Us
+                        </Text>
+                    </Button>
                 </Stack>
 
             </Box>
         
         )}
+        </Box>
 
     </Container>
 

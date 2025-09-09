@@ -22,10 +22,11 @@ const Homepage = () => {
 
         <Box 
             as="section" py={{ base: 12, md: 24}} bg={bg} mb={12} rounded={'lg'}
+            shadow={'lg'}
             >
                 <Container maxW={"container.xl"} >
                     <VStack
-                    spacing={6} textAlign={"center"} align={"center"}
+                    spacing={6} textAlign={"center"} align={"center"} 
                     >
                         <Heading as={'h1'} size={{ base: '2xl', md: '3xl'}}
                             color={textColor}
