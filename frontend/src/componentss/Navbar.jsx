@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <Container maxW={"1140px"}  position='fixed' top={0}
-    left={0} right={0} zIndex={1} bg={bg} 
+    left={0} right={0} zIndex={1} bg={bg} p={{ base: '0', md: '0'}}
     > 
         {/* -------- Desktop Nav -------- */}
         <Flex
@@ -24,9 +24,9 @@ const Navbar = () => {
             align='center'
             justify='space-between'
             wrap='wrap'
-            padding='0.7rem'
+            padding='0.5rem'
             display={{ base: 'none', md: 'flex'}}
-             shadow={'md'}
+            shadow={'md'}
         >
             <Text
             bgGradient={"linear(to-l, #7928CA, #FF0080)"}
@@ -72,7 +72,7 @@ const Navbar = () => {
             <Flex as='nav'
             justify='space-between'
             alignItems={'center'} 
-             shadow={'md'}
+            shadow={'md'}
             >
                 <Text
                 bgGradient={"linear(to-l, #7928CA, #FF0080)"}
@@ -81,6 +81,7 @@ const Navbar = () => {
                 fontWeight={"bold"}
                 textTransform={"uppercase"}
                 textAlign={"center"}
+                p={'2'}
                 >
                     <Link to={"/"} style={{display: "flex", alignItems: "center", gap: "8px", color: ""}}> Phone Store <FaShoppingCart fontSize="18" color='#7928CA' /> </Link> 
                 </Text>
@@ -97,7 +98,7 @@ const Navbar = () => {
                     </Button>
                 </HStack>
 
-                <Box display={{ base: 'block', md: 'none'}}>
+                <Box display={{ base: 'block', md: 'none'}} p={'1'}>
                     <IconButton 
                     onClick={onToggle} 
                     icon={isOpen ? <CloseIcon w={4} h={5} /> : <HamburgerIcon w={6} h={6} /> } 
