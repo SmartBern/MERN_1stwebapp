@@ -26,6 +26,7 @@ const Navbar = () => {
             wrap='wrap'
             padding='0.7rem'
             display={{ base: 'none', md: 'flex'}}
+             shadow={'md'}
         >
             <Text
             bgGradient={"linear(to-l, #7928CA, #FF0080)"}
@@ -71,6 +72,7 @@ const Navbar = () => {
             <Flex as='nav'
             justify='space-between'
             alignItems={'center'} 
+             shadow={'md'}
             >
                 <Text
                 bgGradient={"linear(to-l, #7928CA, #FF0080)"}

@@ -23,6 +23,7 @@ const Homepage = () => {
         <Box 
             as="section" py={{ base: 12, md: 24}} bg={bg} mb={12} rounded={'lg'}
             shadow={'lg'}
+            mt={'20'}
             >
                 <Container maxW={"container.xl"} >
                     <VStack
