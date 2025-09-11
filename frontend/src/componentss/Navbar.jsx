@@ -14,6 +14,8 @@ const Navbar = () => {
     const bg = useColorModeValue("white", "gray.800");
     const { isOpen, onToggle } = useDisclosure();
 
+    const hoverBg = useColorModeValue("gray.200", "gray.600");
+
   return (
     <Container maxW={"1140px"}  position='fixed' top={0}
     left={0} right={0} zIndex={1} bg={bg} p={{ base: '0', md: '0'}}
@@ -118,23 +120,56 @@ const Navbar = () => {
             h="60vh" 
             transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-                <Stack as='nav' spacing={4} p={4}>
-                    <Button variant='ghost'>
-                        <Text color={'white'}>
-                            New Phones
-                        </Text>
-                    </Button>
-                    <Button variant='ghost'>
-                        <Text color={'white'}>
-                            Used Phones
-                        </Text>
-                    </Button>
-                    <Button variant='ghost'>
-                        <Text color={'white'}>
-                            Contact Us
-                        </Text>
-                    </Button>
+                <Stack
+                as="nav"
+                spacing={4}
+                p={4}
+                justifyContent="center"
+                alignItems="center"
+                >
+                    <HStack
+                        as="a"
+                        //href=""
+                        _hover={{ bg: hoverBg }}
+                        w="70%"
+                        justifyContent="center"
+                        p={2}
+                        borderRadius="md"
+                        borderBottom={'2px'}
+                        borderBottomColor={'red'}
+                    >
+                        <Text fontWeight="bold">New Phones</Text>
+                    </HStack>
+
+                    <HStack
+                        as="a"
+                        //href=""
+                        _hover={{ bg: hoverBg }}
+                        w="70%"
+                        justifyContent="center"
+                        p={2}
+                        borderRadius="md"
+                        borderBottom={'2px'}
+                        borderBottomColor={'red'}
+                    >
+                        <Text fontWeight="bold">Used Phones</Text>
+                    </HStack>
+
+                    <HStack
+                        as="a"
+                        //href=""
+                        _hover={{ bg: hoverBg }}
+                        w="70%"
+                        justifyContent="center"
+                        p={2}
+                        borderRadius="md"
+                        borderBottom={'2px'}
+                        borderBottomColor={'red'}
+                    >
+                        <Text fontWeight="bold">Contact Us</Text>
+                    </HStack>
                 </Stack>
+
 
             </Box>
         
