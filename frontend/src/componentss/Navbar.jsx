@@ -14,7 +14,8 @@ const Navbar = () => {
     const bg = useColorModeValue("white", "gray.800");
     const { isOpen, onToggle } = useDisclosure();
 
-    const hoverBg = useColorModeValue("gray.200", "gray.600");
+    const hoverBg = useColorModeValue("gray.600", "gray.700");
+    const textColor = useColorModeValue("white", "white");
 
   return (
     <Container maxW={"1140px"}  position='fixed' top={0}
@@ -138,7 +139,7 @@ const Navbar = () => {
                         borderBottom={'2px'}
                         borderBottomColor={'red'}
                     >
-                        <Text fontWeight="bold">New Phones</Text>
+                        <Text color={textColor}>New Phones</Text>
                     </HStack>
 
                     <HStack
@@ -152,7 +153,7 @@ const Navbar = () => {
                         borderBottom={'2px'}
                         borderBottomColor={'red'}
                     >
-                        <Text fontWeight="bold">Used Phones</Text>
+                        <Text color={textColor}>Used Phones</Text>
                     </HStack>
 
                     <HStack
@@ -166,7 +167,7 @@ const Navbar = () => {
                         borderBottom={'2px'}
                         borderBottomColor={'red'}
                     >
-                        <Text fontWeight="bold">Contact Us</Text>
+                        <Text color={textColor}>Contact Us</Text>
                     </HStack>
                 </Stack>
 
